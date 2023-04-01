@@ -98,7 +98,7 @@ public extension Text {
     ///   - weight: Weight for font
     ///   - color: What color the text should be
     /// - Returns: A new text view with the modifiers applied
-    func genericTextModifier(for font: Font, weight: Font.Weight = .regular, color: Color? = nil) -> Text {
+    func textViewModifier(for font: Font, weight: Font.Weight = .regular, color: Color? = nil) -> Text {
         self
             .font(font)
             .fontWeight(weight)

@@ -56,7 +56,7 @@ var body: some View {
 
 ### Text View Modifiers
 <ul>
-<li>genericTextModifier(for: , weight: , color: )
+<li>textViewModifier(for: , weight: , color: )
 <ul>
 <li>Font: Any Swift Font, Ex: .title</li>
 <li>Weight: Any font weight, Ex: .bold</li>
@@ -74,7 +74,7 @@ This modifier only needs the font provided the other arguments are optional and 
 ```swift
 var body: some View {
     Text("Bottom padding applied")
-        .genericTextModifier(for: .body, weight: .semibold, color: .primary)
+        .textViewModifier(for: .body, weight: .semibold, color: .primary)
 }
 ```
 
