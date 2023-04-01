@@ -17,7 +17,6 @@ out then the modifier defaults to 10
 ## Features
 
 ### Padding Modifiers
--   The following modifiers
 -   bottomPadding
 -   topPadding
 -   genericPadding
@@ -57,7 +56,7 @@ var body: some View {
 
 ### Text View Modifiers
 <ul>
-<li>genericTextModifier(for: <#T##Font#>, weight: <#T##Font.Weight#>, color: <#T##Color?#>)
+<li>genericTextModifier(for: , weight: , color: )
 <ul>
 <li>Font: Any Swift Font, Ex: .title</li>
 <li>Weight: Any font weight, Ex: .bold</li>
@@ -89,7 +88,7 @@ To install using Swift Package Manager, add this to the `dependencies` section o
 To install this into your Xcode project, follow the instructions below:
 
 1. Goto your project folder, tap Package Dependencies, under Packages click the plus button
-2. Enter this in searchbar - `https://github.com/tazmancoder/SwiftUIPaddingModifier.git`. 
+2. Enter this in searchbar - `https://github.com/tazmancoder/ViewModifierKit.git`. 
 3. Set `Dependency Rule` to `Up to Next Major Version`
 4. Tap `Add Package` button.
 
