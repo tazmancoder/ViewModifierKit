@@ -19,7 +19,7 @@ out then the modifier defaults to 10
 ### Padding Modifiers
 -   bottomPadding
 -   topPadding
--   genericPadding
+-   allPadding
 -   trailingPadding
 -   leadingPadding
 -   horizontalPadding
@@ -38,7 +38,7 @@ var body: some View {
         .topPadding(howMuch: 5)
         
     Text("Generic padding applied")
-        .genericPadding(howMuch: 5)
+        .allPadding(howMuch: 5)
         
     Text("Trailing padding applied")
         .trailingPadding(howMuch: 5)

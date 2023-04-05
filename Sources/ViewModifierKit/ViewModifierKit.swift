@@ -30,7 +30,7 @@ public extension View {
     ///
     /// - Parameter howMuch: How much padding
     /// - Returns: A view with the padding applied
-    func genericPadding(howMuch: CGFloat? = 10) -> some View {
+    func allPadding(howMuch: CGFloat? = 10) -> some View {
         padding(howMuch ?? 10)
     }
 
