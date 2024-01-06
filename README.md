@@ -53,18 +53,14 @@ var body: some View {
 ```
 
 ### Text View Modifiers
-<ul>
-<li>textViewModifier(for: , weight: , color: )
+```
+textViewModifier(for: , weight: , color: )
+```
+
 <ul>
 <li>Font: Any Swift Font, Ex: .title</li>
 <li>Weight: Any font weight, Ex: .bold</li>
 <li>Color: Any SwiftUI Color, Ex: .primary</li>
-</ul>
-
-This modifier only needs the font provided the other arguments are optional and have default values.
-<ul>
-<li>Weight: Default value = .regular</li>
-<li>Color: Optional and if not passed in is just set to nil</li>
 </ul>
 
 #### Example
@@ -77,54 +73,48 @@ var body: some View {
 ```
 
 ### Image View Modifiers
-<ul>
-This option only allows color and scale
-<li>imageViewModifier(color: , scale: )
+```
+imageViewModifier(color: , scale: )
+```
 <ul>
 <li>Color: Any SwiftUI Color, Ex: .blue</li>
 <li>Scale: Any Image.Scale, Ex: .fit</li>
 </ul>
 
-<ul>
-This option allows for resizing with 3 required arguments
-<li>imageViewModifier(width: , height: , color: , ratio: , alignment: )
+```
+imageViewModifier(width: , height: , color: , ratio: , alignment: )
+```
 <ul>
 <li>Width: CGFloat, Ex: 50</li>
 <li>Height: CGFloat, Ex: 50</li>
 <li>Color: Any SwiftUI Color, Ex: .blue</li>
+</ul>
 
-This modifier only needs the width, height & color provided the other arguments are optional and have default values.
 <ul>
 <li>Ratio: Default value = .fit</li>
 <li>Alignment: Default value = .center</li>
 </ul>
 
-<ul>
-This option allows for resizing with 4 required arguments
-<li>.imageViewModifier(width: , height: , color: , radius: , ratio: , alignment: )
+```
+imageViewModifier(width: , height: , color: , radius: , ratio: , alignment: )
+```
 <ul>
 <li>Width: CGFloat, Ex: 50</li>
 <li>Height: CGFloat, Ex: 50</li>
 <li>Color: Any SwiftUI Color, Ex: .blue</li>
 <li>Radius: CGFloat, Ex: 5.0e</li>
-
-This modifier only needs the width, height, color & radius provided the other arguments are optional and have default values.
-<ul>
 <li>Ratio: Default value = .fit</li>
 <li>Alignment: Default value = .center</li>
 </ul>
 
-<ul>
-This option allows for resizing with 4 required arguments
-<li>.imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .orange, ratio: .fill, alignment: .center, radius: 5.0)
+```
+imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .orange, ratio: .fill, alignment: .center, radius: 5.0)
+```
 <ul>
 <li>RenderMode: SymbolRenderingMode, Ex: .hierarchical</li>
 <li>Width: CGFloat, Ex: 50</li>
 <li>Height: CGFloat, Ex: 50</li>
 <li>Color: Any SwiftUI Color, Ex: .blue</li>
-
-This modifier only needs the renderMode, width, height, color provided the other arguments are optional and have default values.
-<ul>
 <li>Ratio: Default value = .fit</li>
 <li>Alignment: Default value = .center</li>
 <li>Radius: CGFloat, Ex: 5.0e</li>
