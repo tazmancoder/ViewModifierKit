@@ -170,6 +170,27 @@ public extension Image {
 	/// The alignment argument has a default value of .center and the ratio argument has a default value of .fit.
 	///
 	/// - Parameters:
+	///   - width: Any CGFloat Value
+	///   - height: Any CGFloat Value
+	///   - color: Any Color Value
+	///   - radius: Any CGFloat Value
+	///   - aspectRatio: Any ContentMode Value, default = .fit
+	///   - alignment: Any Alignment Value, default = .center
+	/// - Returns: A new Image view with the specified arguments applied
+	func imageViewModifier(width: CGFloat, height: CGFloat, radius: CGFloat, ratio: ContentMode = .fit, alignment: Alignment = .center) -> some View {
+		self
+			.resizable()
+			.aspectRatio(contentMode: ratio)
+			.frame(width: width, height: height, alignment: alignment)
+			.cornerRadius(radius)
+	}
+
+	/// Modify's an Image view
+	///
+	/// This modifier allows you to resize the image and specify how large you would like the image to be.
+	/// The alignment argument has a default value of .center and the ratio argument has a default value of .fit.
+	///
+	/// - Parameters:
 	///   - renderMode: Any SymbolRenderingMode Value
 	///   - width: Any CGFloat Value
 	///   - height: Any CGFloat Value

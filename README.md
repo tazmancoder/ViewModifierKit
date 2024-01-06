@@ -96,6 +96,17 @@ imageViewModifier(width: , height: , color: , ratio: , alignment: )
 </ul>
 
 ```
+imageViewModifier(width: , height: , radius: , ratio: , alignment: )
+```
+<ul>
+<li>Width: CGFloat, Ex: 50</li>
+<li>Height: CGFloat, Ex: 50</li>
+<li>Radius: CGFloat, Ex: 5.0e</li>
+<li>Ratio: Default value = .fit</li>
+<li>Alignment: Default value = .center</li>
+</ul>
+
+```
 imageViewModifier(width: , height: , color: , radius: , ratio: , alignment: )
 ```
 <ul>
@@ -138,6 +149,9 @@ VStack {
 
 	Image(systemName: "square")
 		.imageViewModifier(width: 50, height: 50, color: .orange, radius: 5.0, ratio: .fit, alignment: .center)
+
+	Image(systemName: "square")
+		.imageViewModifier(width: 50, height: 50, radius: 5.0, ratio: .fit, alignment: .center)
 
 	Image(systemName: "square.text.square")
 		.imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .blue)
