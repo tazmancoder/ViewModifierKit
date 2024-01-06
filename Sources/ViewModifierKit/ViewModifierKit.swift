@@ -151,11 +151,11 @@ public extension Image {
 	///   - width: Any CGFloat Value
 	///   - height: Any CGFloat Value
 	///   - color: Any Color Value
+	///   - radius: Any CGFloat Value
 	///   - aspectRatio: Any ContentMode Value, default = .fit
 	///   - alignment: Any Alignment Value, default = .center
-	///   - radius: Any CGFloat Value, default = 0.0
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, ratio: ContentMode = .fit, alignment: Alignment = .center, radius: CGFloat = 0.0) -> some View {
+	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, radius: CGFloat, ratio: ContentMode = .fit, alignment: Alignment = .center) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
