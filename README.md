@@ -82,32 +82,6 @@ imageViewModifier(color: , scale: )
 </ul>
 
 ```
-imageViewModifier(width: , color: , radius: , ratio: )
-```
-<ul>
-<li>Width: CGFloat, Ex: 50</li>
-<li>Color: Any SwiftUI Color, Ex: .blue</li>
-</ul>
-
-<ul>
-<li>Radius: CGFloat, Default value = 0.0</li>
-<li>Ratio: Default value = .fit</li>
-</ul>
-
-```
-imageViewModifier(height: , color: , radius: , ratio: )
-```
-<ul>
-<li>Height: CGFloat, Ex: 50</li>
-<li>Color: Any SwiftUI Color, Ex: .blue</li>
-</ul>
-
-<ul>
-<li>Radius: CGFloat, Default value = 0.0</li>
-<li>Ratio: Default value = .fit</li>
-</ul>
-
-```
 imageViewModifier(width: , height: , color: , radius: , ratio: )
 ```
 <ul>
@@ -141,34 +115,6 @@ imageViewModifier(renderMode: .hierarchical, color: , scale: )
 <li>RenderMode: SymbolRenderingMode, Ex: .hierarchical</li>
 <li>Color: Any SwiftUI Color, Ex: .blue</li>
 <li>Scale: Any Image.Scale, Ex: .fit</li>
-</ul>
-
-```
-imageViewModifier(renderMode: .hierarchical, width: , color: , radius: , ratio: )
-```
-<ul>
-<li>RenderMode: SymbolRenderingMode, Ex: .hierarchical</li>
-<li>Width: CGFloat, Ex: 50</li>
-<li>Color: Any SwiftUI Color, Ex: .blue</li>
-</ul>
-
-<ul>
-<li>Radius: CGFloat, Default value = 0.0</li>
-<li>Ratio: Default value = .fit</li>
-</ul>
-
-```
-imageViewModifier(renderMode: .hierarchical, height: , color: , radius: , ratio: )
-```
-<ul>
-<li>RenderMode: SymbolRenderingMode, Ex: .hierarchical</li>
-<li>Height: CGFloat, Ex: 50</li>
-<li>Color: Any SwiftUI Color, Ex: .blue</li>
-</ul>
-
-<ul>
-<li>Radius: CGFloat, Default value = 0.0</li>
-<li>Ratio: Default value = .fit</li>
 </ul>
 
 ```
