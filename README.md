@@ -82,7 +82,31 @@ imageViewModifier(color: , scale: )
 </ul>
 
 ```
-imageViewModifier(width: , height: , color: , ratio: , alignment: )
+imageViewModifier(width: , color: , ratio: )
+```
+<ul>
+<li>Width: CGFloat, Ex: 50</li>
+<li>Color: Any SwiftUI Color, Ex: .blue</li>
+</ul>
+
+<ul>
+<li>Ratio: Default value = .fit</li>
+</ul>
+
+```
+imageViewModifier(height: , color: , ratio: )
+```
+<ul>
+<li>Height: CGFloat, Ex: 50</li>
+<li>Color: Any SwiftUI Color, Ex: .blue</li>
+</ul>
+
+<ul>
+<li>Ratio: Default value = .fit</li>
+</ul>
+
+```
+imageViewModifier(width: , height: , color: , ratio: )
 ```
 <ul>
 <li>Width: CGFloat, Ex: 50</li>
@@ -92,22 +116,20 @@ imageViewModifier(width: , height: , color: , ratio: , alignment: )
 
 <ul>
 <li>Ratio: Default value = .fit</li>
-<li>Alignment: Default value = .center</li>
 </ul>
 
 ```
-imageViewModifier(width: , height: , radius: , ratio: , alignment: )
+imageViewModifier(width: , height: , radius: , ratio: )
 ```
 <ul>
 <li>Width: CGFloat, Ex: 50</li>
 <li>Height: CGFloat, Ex: 50</li>
 <li>Radius: CGFloat, Ex: 5.0e</li>
 <li>Ratio: Default value = .fit</li>
-<li>Alignment: Default value = .center</li>
 </ul>
 
 ```
-imageViewModifier(width: , height: , color: , radius: , ratio: , alignment: )
+imageViewModifier(width: , height: , color: , radius: , ratio: )
 ```
 <ul>
 <li>Width: CGFloat, Ex: 50</li>
@@ -115,11 +137,10 @@ imageViewModifier(width: , height: , color: , radius: , ratio: , alignment: )
 <li>Color: Any SwiftUI Color, Ex: .blue</li>
 <li>Radius: CGFloat, Ex: 5.0e</li>
 <li>Ratio: Default value = .fit</li>
-<li>Alignment: Default value = .center</li>
 </ul>
 
 ```
-imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .orange, ratio: .fill, alignment: .center, radius: 5.0)
+imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .orange, ratio: .fill, radius: 5.0)
 ```
 <ul>
 <li>RenderMode: SymbolRenderingMode, Ex: .hierarchical</li>
@@ -127,7 +148,6 @@ imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .oran
 <li>Height: CGFloat, Ex: 50</li>
 <li>Color: Any SwiftUI Color, Ex: .blue</li>
 <li>Ratio: Default value = .fit</li>
-<li>Alignment: Default value = .center</li>
 <li>Radius: CGFloat, Ex: 5.0e</li>
 </ul>
 
@@ -139,25 +159,25 @@ VStack {
 		.imageViewModifier(color: .blue, scale: .medium)
 
 	Image(systemName: "globe")
-		.imageViewModifier(width: 50, height: 50, color: .red)
+		.imageViewModifier(width: 50, color: .red)
 
 	Image(systemName: "globe")
-		.imageViewModifier(width: 50, height: 50, color: .red, ratio: .fit, alignment: .center)
+		.imageViewModifier(height: 50, color: .red)
+
+	Image(systemName: "globe")
+		.imageViewModifier(width: 50, height: 50, color: .red, ratio: .fit)
 
 	Image(systemName: "square")
 		.imageViewModifier(width: 50, height: 50, color: .yellow, radius: 5.0)
 
 	Image(systemName: "square")
-		.imageViewModifier(width: 50, height: 50, color: .orange, radius: 5.0, ratio: .fit, alignment: .center)
-
-	Image(systemName: "square")
-		.imageViewModifier(width: 50, height: 50, radius: 5.0, ratio: .fit, alignment: .center)
+		.imageViewModifier(width: 50, height: 50, color: .orange, radius: 5.0, ratio: .fit)
 
 	Image(systemName: "square.text.square")
 		.imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .blue)
 
 	Image(systemName: "square.text.square")
-		.imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .orange, ratio: .fill, alignment: .center, radius: 5.0)
+		.imageViewModifier(renderMode: .hierarchical, width: 50, height: 50, color: .orange, ratio: .fill, radius: 5.0)
 }
 ```
 

@@ -129,16 +129,54 @@ public extension Image {
 	///
 	/// - Parameters:
 	///   - width: Any CGFloat Value
+	///   - color: Any Color Value
+	///   - aspectRatio: Any ContentMode Value, default = .fit
+	///   - alignment: Any Alignment Value, default = .center
+	/// - Returns: A new Image view with the specified arguments applied
+	func imageViewModifier(width: CGFloat, color: Color, ratio: ContentMode = .fit) -> some View {
+		self
+			.resizable()
+			.aspectRatio(contentMode: ratio)
+			.frame(width: width)
+			.foregroundStyle(color)
+	}
+	
+	/// Modify's an Image view
+	///
+	/// This modifier allows you to resize the image and specify how large you would like the image to be.
+	/// The alignment argument has a default value of .center and the ratio argument has a default value of .fit.
+	///
+	/// - Parameters:
 	///   - height: Any CGFloat Value
 	///   - color: Any Color Value
 	///   - aspectRatio: Any ContentMode Value, default = .fit
 	///   - alignment: Any Alignment Value, default = .center
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, ratio: ContentMode = .fit, alignment: Alignment = .center) -> some View {
+	func imageViewModifier(height: CGFloat, color: Color, ratio: ContentMode = .fit) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
-			.frame(width: width, height: height, alignment: alignment)
+			.frame(height: height)
+			.foregroundStyle(color)
+	}
+
+	/// Modify's an Image view
+	///
+	/// This modifier allows you to resize the image and specify how large you would like the image to be.
+	/// The alignment argument has a default value of .center and the ratio argument has a default value of .fit.
+	///
+	/// - Parameters:
+	///   - width: Any CGFloat Value
+	///   - height: Any CGFloat Value
+	///   - color: Any Color Value
+	///   - aspectRatio: Any ContentMode Value, default = .fit
+	///   - alignment: Any Alignment Value, default = .center
+	/// - Returns: A new Image view with the specified arguments applied
+	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, ratio: ContentMode = .fit) -> some View {
+		self
+			.resizable()
+			.aspectRatio(contentMode: ratio)
+			.frame(width: width, height: height)
 			.foregroundStyle(color)
 	}
 	
@@ -155,11 +193,11 @@ public extension Image {
 	///   - aspectRatio: Any ContentMode Value, default = .fit
 	///   - alignment: Any Alignment Value, default = .center
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, radius: CGFloat, ratio: ContentMode = .fit, alignment: Alignment = .center) -> some View {
+	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, radius: CGFloat, ratio: ContentMode = .fit) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
-			.frame(width: width, height: height, alignment: alignment)
+			.frame(width: width, height: height)
 			.foregroundStyle(color)
 			.cornerRadius(radius)
 	}
@@ -177,11 +215,11 @@ public extension Image {
 	///   - aspectRatio: Any ContentMode Value, default = .fit
 	///   - alignment: Any Alignment Value, default = .center
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(width: CGFloat, height: CGFloat, radius: CGFloat, ratio: ContentMode = .fit, alignment: Alignment = .center) -> some View {
+	func imageViewModifier(width: CGFloat, height: CGFloat, radius: CGFloat, ratio: ContentMode = .fit) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
-			.frame(width: width, height: height, alignment: alignment)
+			.frame(width: width, height: height)
 			.cornerRadius(radius)
 	}
 
@@ -199,12 +237,12 @@ public extension Image {
 	///   - alignment: Any Alignment Value, default = .center
 	///   - radius: Any CGFloat Value, default = 0.0
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(renderMode: SymbolRenderingMode, width: CGFloat, height: CGFloat, color: Color, ratio: ContentMode = .fit, alignment: Alignment = .center, radius: CGFloat = 0.0) -> some View {
+	func imageViewModifier(renderMode: SymbolRenderingMode, width: CGFloat, height: CGFloat, color: Color, ratio: ContentMode = .fit, radius: CGFloat = 0.0) -> some View {
 		self
 			.symbolRenderingMode(renderMode)
 			.resizable()
 			.aspectRatio(contentMode: ratio)
-			.frame(width: width, height: height, alignment: alignment)
+			.frame(width: width, height: height)
 			.foregroundStyle(color)
 			.cornerRadius(radius)
 	}
