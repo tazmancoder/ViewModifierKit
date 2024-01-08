@@ -107,6 +107,7 @@ public extension Text {
 }
 
 public extension Image {
+	// MARK: - Without SymbolRenderingMode
 	
 	/// Modify's an Image view
 	///
@@ -130,10 +131,10 @@ public extension Image {
 	/// - Parameters:
 	///   - width: Any CGFloat Value
 	///   - color: Any Color Value
+	///   - radius: Any CGFloat Value, default = 0.0
 	///   - aspectRatio: Any ContentMode Value, default = .fit
-	///   - alignment: Any Alignment Value, default = .center
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(width: CGFloat, color: Color, ratio: ContentMode = .fit) -> some View {
+	func imageViewModifier(width: CGFloat, color: Color, radius: CGFloat = 0.0, ratio: ContentMode = .fit) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
@@ -149,10 +150,10 @@ public extension Image {
 	/// - Parameters:
 	///   - height: Any CGFloat Value
 	///   - color: Any Color Value
+	///   - radius: Any CGFloat Value, default = 0.0
 	///   - aspectRatio: Any ContentMode Value, default = .fit
-	///   - alignment: Any Alignment Value, default = .center
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(height: CGFloat, color: Color, ratio: ContentMode = .fit) -> some View {
+	func imageViewModifier(height: CGFloat, color: Color, radius: CGFloat = 0.0, ratio: ContentMode = .fit) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
@@ -169,17 +170,17 @@ public extension Image {
 	///   - width: Any CGFloat Value
 	///   - height: Any CGFloat Value
 	///   - color: Any Color Value
+	///   - radius: Any CGFloat Value, default = 0.0
 	///   - aspectRatio: Any ContentMode Value, default = .fit
-	///   - alignment: Any Alignment Value, default = .center
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, ratio: ContentMode = .fit) -> some View {
+	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, radius: CGFloat = 0.0, ratio: ContentMode = .fit) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
 			.frame(width: width, height: height)
 			.foregroundStyle(color)
 	}
-	
+
 	/// Modify's an Image view
 	///
 	/// This modifier allows you to resize the image and specify how large you would like the image to be.
@@ -188,19 +189,33 @@ public extension Image {
 	/// - Parameters:
 	///   - width: Any CGFloat Value
 	///   - height: Any CGFloat Value
-	///   - color: Any Color Value
 	///   - radius: Any CGFloat Value
 	///   - aspectRatio: Any ContentMode Value, default = .fit
-	///   - alignment: Any Alignment Value, default = .center
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(width: CGFloat, height: CGFloat, color: Color, radius: CGFloat, ratio: ContentMode = .fit) -> some View {
+	func imageViewModifier(width: CGFloat, height: CGFloat, radius: CGFloat = 0.0, ratio: ContentMode = .fit) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
 			.frame(width: width, height: height)
-			.foregroundStyle(color)
 			.cornerRadius(radius)
 	}
+
+	// MARK: - With SymbolRenderingMode
+	
+	/// Modify's an Image view
+	///
+	/// This modifier allows you to apply a color and scale to the image. The
+	///
+	/// - Parameters:
+	///   - renderMode: Any SymbolRenderingMode Value
+	///   - color: A Color Value
+	///   - scale: A Image.Scale Value
+	/// - Returns: A new Image view with the specified arguments applied
+	func imageViewModifier(renderMode: SymbolRenderingMode, color: Color, scale: Image.Scale) -> some View {
+		self
+			.foregroundStyle(color)
+			.imageScale(scale)
+	}
 	
 	/// Modify's an Image view
 	///
@@ -208,14 +223,53 @@ public extension Image {
 	/// The alignment argument has a default value of .center and the ratio argument has a default value of .fit.
 	///
 	/// - Parameters:
+	///   - renderMode: Any SymbolRenderingMode Value
 	///   - width: Any CGFloat Value
+	///   - color: Any Color Value
+	///   - radius: Any CGFloat Value, default = 0.0
+	///   - aspectRatio: Any ContentMode Value, default = .fit
+	/// - Returns: A new Image view with the specified arguments applied
+	func imageViewModifier(renderMode: SymbolRenderingMode, width: CGFloat, color: Color, radius: CGFloat = 0.0, ratio: ContentMode = .fit) -> some View {
+		self
+			.resizable()
+			.aspectRatio(contentMode: ratio)
+			.frame(width: width)
+			.foregroundStyle(color)
+	}
+	
+	/// Modify's an Image view
+	///
+	/// This modifier allows you to resize the image and specify how large you would like the image to be.
+	/// The alignment argument has a default value of .center and the ratio argument has a default value of .fit.
+	///
+	/// - Parameters:
+	///   - renderMode: Any SymbolRenderingMode Value
 	///   - height: Any CGFloat Value
 	///   - color: Any Color Value
+	///   - radius: Any CGFloat Value, default = 0.0
+	///   - aspectRatio: Any ContentMode Value, default = .fit
+	/// - Returns: A new Image view with the specified arguments applied
+	func imageViewModifier(renderMode: SymbolRenderingMode, height: CGFloat, color: Color, radius: CGFloat = 0.0, ratio: ContentMode = .fit) -> some View {
+		self
+			.resizable()
+			.aspectRatio(contentMode: ratio)
+			.frame(height: height)
+			.foregroundStyle(color)
+	}
+	
+	/// Modify's an Image view
+	///
+	/// This modifier allows you to resize the image and specify how large you would like the image to be.
+	/// The alignment argument has a default value of .center and the ratio argument has a default value of .fit.
+	///
+	/// - Parameters:
+	///   - renderMode: Any SymbolRenderingMode Value
+	///   - width: Any CGFloat Value
+	///   - height: Any CGFloat Value
 	///   - radius: Any CGFloat Value
 	///   - aspectRatio: Any ContentMode Value, default = .fit
-	///   - alignment: Any Alignment Value, default = .center
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(width: CGFloat, height: CGFloat, radius: CGFloat, ratio: ContentMode = .fit) -> some View {
+	func imageViewModifier(renderMode: SymbolRenderingMode, width: CGFloat, height: CGFloat, radius: CGFloat = 0.0, ratio: ContentMode = .fit) -> some View {
 		self
 			.resizable()
 			.aspectRatio(contentMode: ratio)
@@ -233,11 +287,10 @@ public extension Image {
 	///   - width: Any CGFloat Value
 	///   - height: Any CGFloat Value
 	///   - color: Any Color Value
-	///   - aspectRatio: Any ContentMode Value, default = .fit
-	///   - alignment: Any Alignment Value, default = .center
 	///   - radius: Any CGFloat Value, default = 0.0
+	///   - aspectRatio: Any ContentMode Value, default = .fit
 	/// - Returns: A new Image view with the specified arguments applied
-	func imageViewModifier(renderMode: SymbolRenderingMode, width: CGFloat, height: CGFloat, color: Color, ratio: ContentMode = .fit, radius: CGFloat = 0.0) -> some View {
+	func imageViewModifier(renderMode: SymbolRenderingMode, width: CGFloat, height: CGFloat, color: Color, radius: CGFloat = 0.0, ratio: ContentMode = .fit) -> some View {
 		self
 			.symbolRenderingMode(renderMode)
 			.resizable()
